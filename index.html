@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Technical Documentation Page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>React Documentation</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Installation">Installation</a>
+        <a class="nav-link" href="#Notable_Features">Notable Features</a>
+        <a class="nav-link" href="#Components">Components</a>
+        <a class="nav-link" href="#Routing">Routing</a>
+        <a class="nav-link" href="#Virtual_DOM">Virtual DOM</a>
+        <a class="nav-link" href="#Reference">Reference</a>
+      </nav>
+
+      <section id="Introduction" class="main-section">
+        <header>Introduction</header>
+        <p>React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.</p>
+        <p>React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js. Because React is only concerned with the user interface and rendering components to the DOM, React applications often rely on libraries for routing and other client-side functionality. A key advantage of React is that it only rerenders those parts of the page that have changed, avoiding unnecessary rerendering of unchanged DOM elements.</p>
+      </section>
+
+      <section id="Installation" class="main-section">
+        <header>Installation</header>
+        <h3>Next.js</h3>
+        <p>Next.js is a full-stack React framework. It’s versatile and lets you create React apps of any size—from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your termina</p>
+        <code>npx create-next-app@latest</code>
+        <p>If you’re new to Next.js, check out the learn Next.js course.</p>
+        <p>Next.js is maintained by Vercel. You can deploy a Next.js app to any Node.js or serverless hosting, or to your own server. Next.js also supports a static export which doesn’t require a server.</p>
+      </section>
+
+      <section id="Notable_Features" class="main-section">
+        <header>Notable Features</header>
+        <ul>
+          <li>Declarative</li>
+          <p>React adheres to the declarative programming paradigm.Developers design views for each state of an application, and React updates and renders components when data changes. This is in contrast with imperative programming.</p>
+          <li>Components</li>
+          <p>React code is made of entities called components.  These components are modular and reusable. React applications typically consist of many layers of components. The components are rendered to a root element in the DOM using the React DOM library. When rendering a component, values are passed between components through props (short for "properties"). Values internal to a component are called its state.</p>
+          <p>The two primary ways of declaring components in React are through function components and class components.</p>
+          <li>Function components</li>
+          <p>Function components are declared with a function (using JavaScript function syntax or an arrow function expression) that accepts a single "props" argument and returns JSX. From React v16.8 onwards, function components can use state with the useState Hook.</p>
+          <li>React Hooks</li>
+          <p>On February 16, 2019, React 16.8 was released to the public, introducing React Hooks. Hooks are functions that let developers "hook into" React state and lifecycle features from function components. Notably, Hooks do not work inside classes — they let developers use more features of React without classes.</p>
+          <p>React provides several built-in Hooks such as <code>useState</code>, <code>useContext</code>, <code>useReducer</code>, <code>useMemo</code> and <code>useEffect</code>. Others are documented in the Hooks API Reference.<code>useState</code> and <code>useEffect</code>, which are the most commonly used, are for controlling state and side effects  respectively.</p>
+          <h4>Rules of hooks</h4>
+          <p>There are two rules of Hooks[21] which describe the characteristic code patterns that Hooks rely on:</p>
+          <ul>
+            <li>"Only Call Hooks at the Top Level" — Don't call hooks from inside loops, conditions, or nested statements so that the hooks are called in the same order each render.</li>
+            <li>"Only Call Hooks from React Functions" — Don't call hooks from plain JavaScript functions so that stateful logic stays with the component.</li>
+          </ul>
+          <p>Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of Hooks and the implementation of custom Hooks, which may call other Hooks.</p>
+        </ul>
+      </section>      
+
+      <section id="Components" class="main-section">
+        <header>Components</header>
+        <ul>
+          <li>Server components</li>
+          <p>React server components or "RSC"s are function components that run exclusively on the server. The concept was first introduced in the talk Data Fetching with Server Components Though a similar concept to Server Side Rendering, RSCs do not send corresponding JavaScript to the client as no hydration occurs. As a result, they have no access to hooks. However, they may be asynchronous function, allowing them to directly perform asynchronous operations:</p>
+          <p>Currently, server components are most readily usable with Next.js.</p>
+          <li>Class components</li>
+          <p>Class components are declared using ES6 classes. They behave the same way that function components do, but instead of using Hooks to manage state and lifecycle events, they use the lifecycle methods on the <code>React.Component</code> base class.</p>
+          <p>The introduction of React Hooks with React 16.8 in February 2019 allowed developers to manage state and lifecycle behaviors within functional components, reducing the reliance on class components.</p>
+          <p>React Hooks, such as <code>useState</code> for state management and <code>useEffect</code> for side effects, have provided a more streamlined and concise way to build and manage React applications. This shift has led to improved code readability and reusability, encouraging developers to migrate from class components to functional components.</p>
+          <p>This trend aligns with the broader industry movement towards functional programming and modular design. As React continues to evolve, it's essential for developers to consider the benefits of functional components and React Hooks when building new applications or refactoring existing ones.</p>
+        </ul>
+      </section>
+
+      <section id="Routing" class="main-section">
+        <header>Routing</header>
+        <p>React itself does not come with built-in support for routing. React is primarily a library for building user interfaces, and it doesn't include a full-fledged routing solution out of the box.</p>
+        <p>However, there are popular third-party libraries that can be used to handle routing in React applications. One such library is react-router, which provides a comprehensive routing solution for React applications. It allows you to define routes, manage navigation, and handle URL changes in a React-friendly way.</p>
+        <h4>Install <code>react-router</code></h4>
+        <ul>
+          <li>Install react-router-dom using npm or yarn:</li>
+          <code>npm install react-router-dom</code>
+          <li>Set up your routing configuration in your main application file:</li>
+          <li>Create the components for each route (e.g., Home, About, Contact).</li>
+        </ul>
+        <p>With this setup, when the user navigates to different URLs, the corresponding components will be rendered based on the defined routes.</p>
+      </section>
+
+      <section id="Virtual_DOM" class="main-section">
+        <header>Virtual DOM</header>
+        <p>Another notable feature is the use of a virtual Document Object Model, or Virtual DOM. React creates an in-memory data-structure cache, computes the resulting differences, and then updates the browser's displayed DOM efficiently. This process is called reconciliation. This allows the programmer to write code as if the entire page is rendered on each change, while React only renders the components that actually change. This selective rendering provides a major performance boost.</p>
+      </section>
+
+      <section id="Reference" class="main-section">
+        <header>Reference</header>
+        <ul>
+          <li>All the documentation in this page is taken from <a href="https://en.wikipedia.org/wiki/React_(software)">Wikipedia</a></li>
+        </ul>
+      </section>
+
+    </main>
+  </body>
+
+</html>
